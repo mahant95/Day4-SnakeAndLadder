@@ -3,7 +3,6 @@ import java.util.*;
 
 public class SnakeAndLadder {
 
-
 	public static void main(String[] args) {
 		Random r = new Random();
 		System.out.println("Welcome to snake ladder program.");
@@ -13,6 +12,25 @@ public class SnakeAndLadder {
 		
 		int dice = r.nextInt(6) + 1 ;
 		System.out.println("Dice Rolled: "+dice);
+		
+		int option = r.nextInt(3);
+		switch(option)
+		{
+		case 0: System.out.println("No Play!!");
+				break;
+		case 1: System.out.println("Ladder!");
+				userPosition = userPosition + dice;
+				
+				break;
+		default: System.out.println("Snake!");
+				userPosition = userPosition - dice;
+				
+				if(userPosition<0)
+				{ userPosition = 0; 
+				}
+		}
+		System.out.println("Presnt Position of the User: "+userPosition);
+		
 	}
 
 }
